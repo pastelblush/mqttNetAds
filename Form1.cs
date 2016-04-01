@@ -190,7 +190,7 @@ namespace MQTT.Sample
                 tags.bFloat1 = binRead.ReadBoolean();
                 tags.bFloat2 = binRead.ReadBoolean();
                 tags.bFloat3 = binRead.ReadBoolean();
-                tags.bAuto = binRead.ReadBoolean();
+                tags.bEmergency = binRead.ReadBoolean();
             }
 
             if (e.NotificationHandle == hConnect[1])
