@@ -2,9 +2,9 @@
 <!--This file is created by the TCatPlcCtrl automatically. Manually changes will be overwritten!-->
 <PlcProjectInfo xmlns:p="http://www.beckhoff.com/2002/01/TcPlcProjectDesc">
 	<ProjectInfo>
-		<Path>C:\Users\MuhammadR\Desktop\MqttAdsSample\TwinCAT2\PLC\AdsMqtt.pro</Path>
+		<Path>C:\Users\MuhammadR\Desktop\MqttAdsSample - .net3.5\mqttNetAds\PLC\AdsMqtt.pro</Path>
 		<IsLibrary>false</IsLibrary>
-		<ChangeDate>2016-03-18T10:40:13</ChangeDate>
+		<ChangeDate>2016-04-04T16:25:16</ChangeDate>
 		<Library>
 			<Name>STANDARD.LIB</Name>
 			<Path>C:\TWINCAT\PLC\LIB\STANDARD.LIB</Path>
@@ -16,7 +16,7 @@
 			<NetId>0.0.0.0.0.0</NetId>
 			<Port>801</Port>
 			<TargetName>
-				<![CDATA[Target: Local (127.255.255.1.1.1), Run Time: 1]]>
+				<![CDATA[Target: Local (10.110.2.18.1.1), Run Time: 1]]>
 			</TargetName>
 		</AdsInfo>
 	</RoutingInfo>

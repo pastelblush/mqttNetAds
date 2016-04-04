@@ -120,8 +120,8 @@ namespace MQTT.Sample
                 hConnect[2] = tcClient.AddDeviceNotification(".Relay", dataStream, 22, 11, AdsTransMode.OnChange, 100, 0, tbBool);
                 hConnect[3] = tcClient.AddDeviceNotification(".DiO", dataStream, 33, 11, AdsTransMode.OnChange, 100, 0, tbBool);
                 hConnect[4] = tcClient.AddDeviceNotification(".bAuto", dataStream, 44, 1, AdsTransMode.OnChange, 100, 0, tbBool);
-                hConnect[5] = tcClient.AddDeviceNotification(".bPump1", dataStream, 45, 1, AdsTransMode.OnChange, 100, 0, tbBool);
-                hConnect[6] = tcClient.AddDeviceNotification(".bPump2", dataStream, 46, 1, AdsTransMode.OnChange, 100, 0, tbBool);
+                hConnect[5] = tcClient.AddDeviceNotification(".bPump2", dataStream, 45, 1, AdsTransMode.OnChange, 100, 0, tbBool);
+                hConnect[6] = tcClient.AddDeviceNotification(".bPump1", dataStream, 46, 1, AdsTransMode.OnChange, 100, 0, tbBool);
                 hConnect[7] = tcClient.AddDeviceNotification(".irThermocoupler", dataStream, 47, (2*4), AdsTransMode.OnChange, 100, 0, tbReal);
                 hConnect[8] = tcClient.AddDeviceNotification(".rTempLimit", dataStream, 55, (2 * 4), AdsTransMode.OnChange, 100, 0, tbReal);
                 hConnect[9] = tcClient.AddDeviceNotification(".rTankLevel", dataStream, 63, (11 * 4), AdsTransMode.OnChange, 100, 0, tbBool);
@@ -133,8 +133,8 @@ namespace MQTT.Sample
 				MessageBox.Show(err.Message);
 			}
 
-            bPump1 = tcClient.CreateVariableHandle(".bPump1");
-            bPump2 = tcClient.CreateVariableHandle(".bPump2");
+            bPump1 = tcClient.CreateVariableHandle(".bPump2");
+            bPump2 = tcClient.CreateVariableHandle(".bPump1");
             bAuto = tcClient.CreateVariableHandle(".bAuto");
             irThermocoupler_h = tcClient.CreateVariableHandle(".rTempLimit");
 
@@ -171,6 +171,7 @@ namespace MQTT.Sample
             if (e.Topic == "rTempLimit")
             {
                 var chars = Encoding.UTF8.GetString(e.Message);
+
                 jsontagreal tag = JsonConvert.DeserializeObject<jsontagreal>(chars);
                 rTempLimit[0] = tag.val;
                 tcClient.WriteAny(irThermocoupler_h, rTempLimit);
